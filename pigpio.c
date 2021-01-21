@@ -4916,7 +4916,7 @@ int serOpen(char *tty, unsigned serBaud, unsigned serFlags)
 
    SER_CHECK_INITED;
 
-   if (strncmp("/dev/tty", tty, 8) && strncmp("/dev/serial", tty, 11))
+   if (strncmp("/dev/tty", tty, 8) && strncmp("/dev/serial", tty, 11) && strncmp("/dev/rfcomm", tty,11))
       SOFT_ERROR(PI_BAD_SER_DEVICE, "bad device (%s)", tty);
 
    switch (serBaud)
